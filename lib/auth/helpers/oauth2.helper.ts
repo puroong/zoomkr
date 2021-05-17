@@ -3,20 +3,26 @@ import {
   RequestAccessTokenParameter,
   RequestAccessTokenResponse,
 } from '../interfaces/oauth2.interface';
-import { EMPTY_BODY, ZOOM_API_HOST } from '../../core/constants/core';
+import { EMPTY_BODY } from '../../core/constants/core.constant';
 import { stringify } from '../../core/helpers/querstring.helper';
-import axios from 'axios';
+import axios from '../../core/axios';
+import { REQUEST_ACCESS_TOKEN_PATH } from '../constants/oauth2.constant';
 
-function authorizationUrl(parameter: RequestAccessTokenParameter) {
-  const querystring = stringify(parameter);
-  return `${ZOOM_API_HOST}${REQUEST_ACCESS_TOKEN_PATH}?${querystring}`;
+function requestAccessTokenApiPath(parameter: RequestAccessTokenParameter) {
+  const querystring = stringify({
+    code: parameter.code,
+    redirect_uri: parameter.redirectUri,
+    grant_type: parameter.grantType,
+    code_verifier: parameter.codeVerifier,
+  });
+  return `${REQUEST_ACCESS_TOKEN_PATH}?${querystring}`;
 }
 
 async function requestAccessToken(
   credential: Oauth2Credential,
   parameter: RequestAccessTokenParameter,
 ): Promise<RequestAccessTokenResponse> {
-  const url = authorizationUrl(parameter);
+  const url = requestAccessTokenApiPath(parameter);
   try {
     const { data } = await axios.post(url, EMPTY_BODY, {
       auth: {

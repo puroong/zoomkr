@@ -1,3 +1,5 @@
 import { getAccessToken } from './helpers/oauth2.helper';
 
-export { getAccessToken };
+export const auth = {
+  getAccessToken,
+};

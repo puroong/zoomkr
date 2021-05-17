@@ -1,1 +1,1 @@
-const REQUEST_ACCESS_TOKEN_PATH = '/oauth/token';
+export const REQUEST_ACCESS_TOKEN_PATH = '/oauth/token';
