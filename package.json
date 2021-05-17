@@ -1,7 +1,7 @@
 {
-  "name": "npm-lib-boilerplate",
+  "name": "zoomme",
   "version": "0.0.1",
-  "description": "npm library boilerplate",
+  "description": "zoom api for nodejs",
   "author": "puroong",
   "license": "MIT",
   "scripts": {
