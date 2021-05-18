@@ -5,6 +5,7 @@
   "author": "puroong",
   "license": "MIT",
   "repository": "https://github.com/puroong/zoomkr",
+  "main": "dist/index.js",
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.json",
     "format": "prettier --write \"**/*.ts\"",
