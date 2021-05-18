@@ -1,12 +1,12 @@
+import axios from '../../core/axios';
+import { EMPTY_BODY, ZOOM_AUTH_HOST } from '../../core/constants/core.constant';
+import { stringify } from '../../core/helpers/querstring.helper';
+import { REQUEST_ACCESS_TOKEN_PATH } from '../constants/oauth2.constant';
 import {
   Oauth2Credential,
   RequestAccessTokenParameter,
-  RequestAccessTokenResponse,
+  RequestAccessTokenResponse
 } from '../interfaces/oauth2.interface';
-import { EMPTY_BODY } from '../../core/constants/core.constant';
-import { stringify } from '../../core/helpers/querstring.helper';
-import axios from '../../core/axios';
-import { REQUEST_ACCESS_TOKEN_PATH } from '../constants/oauth2.constant';
 
 function requestAccessTokenApiPath(parameter: RequestAccessTokenParameter) {
   const querystring = stringify({
@@ -15,7 +15,7 @@ function requestAccessTokenApiPath(parameter: RequestAccessTokenParameter) {
     grant_type: parameter.grantType,
     code_verifier: parameter.codeVerifier,
   });
-  return `${REQUEST_ACCESS_TOKEN_PATH}?${querystring}`;
+  return `${ZOOM_AUTH_HOST}${REQUEST_ACCESS_TOKEN_PATH}?${querystring}`;
 }
 
 async function requestAccessToken(
