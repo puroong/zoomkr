@@ -240,3 +240,17 @@ export interface CreateMeetingPayload {
 
   accessToken: string;
 }
+
+export interface ListMeetingParam {
+  userId: string;
+}
+
+export interface ListMeetingQuery {}
+
+export interface ListMeetingPayload {
+  param: ListMeetingParam;
+
+  query: ListMeetingQuery;
+
+  accessToken: string;
+}
