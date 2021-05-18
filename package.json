@@ -68,5 +68,8 @@
     "*.ts": [
       "prettier --write"
     ]
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
