@@ -1,242 +1,242 @@
 export interface CreateMeetingParameter {
-    userId: string;
+  userId: string;
 }
 
 export enum MeetingType {
-    INSTANT_MEETING = 1,
-    SCHEDULED_MEETING = 2,
-    RECURRING_MEETING_WITH_NO_FIXED_TIME = 3,
-    RECURRING_MEETING_WITH_FIXED_TIME = 8,
+  INSTANT_MEETING = 1,
+  SCHEDULED_MEETING = 2,
+  RECURRING_MEETING_WITH_NO_FIXED_TIME = 3,
+  RECURRING_MEETING_WITH_FIXED_TIME = 8,
 }
 
 export interface TrackingField {
-    form: string;
-    value?: string;
+  form: string;
+  value?: string;
 }
 
 export enum RecurrenceType {
-    DAILY = 1,
-    WEEKLY = 2,
-    MONTHLY = 3,
+  DAILY = 1,
+  WEEKLY = 2,
+  MONTHLY = 3,
 }
 
 export enum WeeklyDay {
-    SUNDAY = 1,
-    MONDAY = 2,
-    TUESDAY = 3,
-    WEDNESDAY = 4,
-    THURSDAY = 5,
-    FRIDAY = 6,
-    SATURDAY = 7,
+  SUNDAY = 1,
+  MONDAY = 2,
+  TUESDAY = 3,
+  WEDNESDAY = 4,
+  THURSDAY = 5,
+  FRIDAY = 6,
+  SATURDAY = 7,
 }
 
 class WeeklyDaysVo {
-    private days: WeeklyDay[];
+  private days: WeeklyDay[];
 
-    constructor(days: WeeklyDay[]) {
-        this.days = days;
-    }
+  constructor(days: WeeklyDay[]) {
+    this.days = days;
+  }
 
-    toString(): WeeklyDays {
-        return this.days.join(",");
-    }
+  toString(): WeeklyDays {
+    return this.days.join(',');
+  }
 }
 
 export type WeeklyDays = string;
 
 export enum MonthlyWeek {
-    LAST_WEEEK_OF_MONTH = -1,
-    FIRST_WEEEK_OF_MONTH = 1,
-    SECOND_WEEEK_OF_MONTH = 2,
-    THIRD_WEEEK_OF_MONTH = 3,
-    FOURTH_WEEEK_OF_MONTH = 4,
+  LAST_WEEEK_OF_MONTH = -1,
+  FIRST_WEEEK_OF_MONTH = 1,
+  SECOND_WEEEK_OF_MONTH = 2,
+  THIRD_WEEEK_OF_MONTH = 3,
+  FOURTH_WEEEK_OF_MONTH = 4,
 }
 
 export interface Recurrence {
-    type: RecurrenceType;
+  type: RecurrenceType;
 
-    repeat_interval?: number;
+  repeat_interval?: number;
 
-    weekly_days?: WeeklyDays;
+  weekly_days?: WeeklyDays;
 
-    monthly_day?: number;
+  monthly_day?: number;
 
-    monthly_week?: MonthlyWeek;
+  monthly_week?: MonthlyWeek;
 
-    monthly_week_day?: WeeklyDay;
+  monthly_week_day?: WeeklyDay;
 
-    end_times?: number;
+  end_times?: number;
 
-    end_date_time?: string;
+  end_date_time?: string;
 }
 
 export enum JoinBeforeHostTime {
-    ANYTIME = 0,
-    FIVE_MINUTES_BEFORE_START_TIME = 5,
-    TEN_MINUTES_BEFORE_START_TIME = 10,
+  ANYTIME = 0,
+  FIVE_MINUTES_BEFORE_START_TIME = 5,
+  TEN_MINUTES_BEFORE_START_TIME = 10,
 }
 
 export enum ApprovalType {
-    AUTOMATIC = 0,
-    MANUAL = 1,
-    NO_REGISTRATION_REQUIRED = 2,
+  AUTOMATIC = 0,
+  MANUAL = 1,
+  NO_REGISTRATION_REQUIRED = 2,
 }
 
 export enum RegistrationType {
-    REGISTER_ONCE_ATTEND_ANY_OCCURENCE = 1,
-    REGISTER_EACH_OCCURENCE = 2,
-    REGISTER_ONCE_AND_CHOOSE_OCCURENCE = 3,
+  REGISTER_ONCE_ATTEND_ANY_OCCURENCE = 1,
+  REGISTER_EACH_OCCURENCE = 2,
+  REGISTER_ONCE_AND_CHOOSE_OCCURENCE = 3,
 }
 
 export enum Audio {
-    BOTH = 'both',
-    TELEPHONY = 'telephony',
-    VOIP = 'voip',
+  BOTH = 'both',
+  TELEPHONY = 'telephony',
+  VOIP = 'voip',
 }
 
 export enum AutoRecording {
-    LOCAL = 'local',
-    CLOUD = 'cloud',
-    NONE = 'none',
+  LOCAL = 'local',
+  CLOUD = 'cloud',
+  NONE = 'none',
 }
 
 export interface Room {
-    name?: string;
+  name?: string;
 
-    pariticipants?: string[];
+  pariticipants?: string[];
 }
 
 export interface BreakoutRoom {
-    enable?: boolean;
+  enable?: boolean;
 
-    rooms?: Room[];
+  rooms?: Room[];
 }
 
 export interface Interpreter {
-    email?: string;
+  email?: string;
 
-    languages?: string;
+  languages?: string;
 }
 
 export interface LanguageInterpretation {
-    enable?: boolean;
+  enable?: boolean;
 
-    interpreters?: Interpreter[]; 
+  interpreters?: Interpreter[];
 }
 
 export enum EncryptionType {
-    ENHANCED_ENCRYPTION = 'enhanced_encryption',
-    E2EE = 'e2ee',
+  ENHANCED_ENCRYPTION = 'enhanced_encryption',
+  E2EE = 'e2ee',
 }
 
 export enum Method {
-    APPROVE = 'approve',
-    DENY = 'deny',
+  APPROVE = 'approve',
+  DENY = 'deny',
 }
 
 export interface ApprovedOrDeniedCountriesOrRegions {
-    enable?: boolean;
+  enable?: boolean;
 
-    method?: Method;
+  method?: Method;
 
-    approved_list?: string[];
+  approved_list?: string[];
 
-    denied_list?: string[]
+  denied_list?: string[];
 }
 export interface Setting {
-    host_video?: boolean;
+  host_video?: boolean;
 
-    participant_video?: boolean;
+  participant_video?: boolean;
 
-    cn_meeting?: boolean;
+  cn_meeting?: boolean;
 
-    in_meeting?: boolean;
+  in_meeting?: boolean;
 
-    join_before_host?: boolean;
+  join_before_host?: boolean;
 
-    jbh_time?: JoinBeforeHostTime;
+  jbh_time?: JoinBeforeHostTime;
 
-    mute_upon_entry?: boolean;
+  mute_upon_entry?: boolean;
 
-    watermark?: boolean;
+  watermark?: boolean;
 
-    use_pmi?: boolean;
+  use_pmi?: boolean;
 
-    approval_type?: ApprovalType;
+  approval_type?: ApprovalType;
 
-    registration_type?: RegistrationType;
+  registration_type?: RegistrationType;
 
-    audio?: Audio;
+  audio?: Audio;
 
-    auto_recording?: AutoRecording;
+  auto_recording?: AutoRecording;
 
-    alternative_hosts?: string;
+  alternative_hosts?: string;
 
-    close_registration?: boolean;
+  close_registration?: boolean;
 
-    waiting_room?: boolean;
+  waiting_room?: boolean;
 
-    global_dial_in_countries?: string[]
+  global_dial_in_countries?: string[];
 
-    contact_name?: string;
+  contact_name?: string;
 
-    contact_email?: string;
+  contact_email?: string;
 
-    registrants_email_notification?: boolean;
+  registrants_email_notification?: boolean;
 
-    meeting_authentication?: boolean;
+  meeting_authentication?: boolean;
 
-    authentication_options?: string;
+  authentication_options?: string;
 
-    authentication_domains?: string;
+  authentication_domains?: string;
 
-    additional_data_center_regions?: string[];
+  additional_data_center_regions?: string[];
 
-    breakout_room?: BreakoutRoom;
+  breakout_room?: BreakoutRoom;
 
-    language_interpretation?: LanguageInterpretation;
+  language_interpretation?: LanguageInterpretation;
 
-    show_share_button?: boolean;
+  show_share_button?: boolean;
 
-    allow_multiple_devices?: boolean;
+  allow_multiple_devices?: boolean;
 
-    encryption_type?: EncryptionType;
+  encryption_type?: EncryptionType;
 
-    approved_or_denied_countries_or_regions?: ApprovedOrDeniedCountriesOrRegions;
+  approved_or_denied_countries_or_regions?: ApprovedOrDeniedCountriesOrRegions;
 
-    alternative_hosts_email_notification?: boolean;
+  alternative_hosts_email_notification?: boolean;
 }
 
 export interface CreateMeetingRequestBody {
-    topic?: string;
+  topic?: string;
 
-    type?: MeetingType;
+  type?: MeetingType;
 
-    start_time?: string;
+  start_time?: string;
 
-    duration?: number;
-    
-    schedule_for?: string;
+  duration?: number;
 
-    timezone?: string;
+  schedule_for?: string;
 
-    password?: string;
+  timezone?: string;
 
-    agenda?: string;
+  password?: string;
 
-    tracking_fields?: TrackingField[];
-    
-    recurrence?: Recurrence;
+  agenda?: string;
 
-    settings: Setting;
+  tracking_fields?: TrackingField[];
 
-    template_id?: string;
+  recurrence?: Recurrence;
+
+  settings: Setting;
+
+  template_id?: string;
 }
 
 export interface CreateMeetingPayload {
-    parameter: CreateMeetingParameter;
+  parameter: CreateMeetingParameter;
 
-    body: CreateMeetingRequestBody;
+  body: CreateMeetingRequestBody;
 
-    accessToken: string;
+  accessToken: string;
 }

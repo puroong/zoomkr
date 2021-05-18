@@ -5,7 +5,7 @@ import { REQUEST_ACCESS_TOKEN_PATH } from '../constants/oauth2.constant';
 import {
   Oauth2Credential,
   RequestAccessTokenParameter,
-  RequestAccessTokenResponse
+  RequestAccessTokenResponse,
 } from '../interfaces/oauth2.interface';
 
 function requestAccessTokenApiPath(parameter: RequestAccessTokenParameter) {
