@@ -1,13 +1,13 @@
 import axios from '../../core/axios';
-import { CreateMeetingParameter, CreateMeetingPayload } from '../types';
+import { CreateMeetingParam, CreateMeetingPayload } from '../types';
 
-function createMeetingPath(payload: CreateMeetingParameter) {
+function createMeetingPath(payload: CreateMeetingParam) {
   return `/users/${payload.userId}/meetings`;
 }
 
 export async function createMeeting(payload: CreateMeetingPayload) {
-  const { parameter, body, accessToken } = payload;
-  const path = createMeetingPath(parameter);
+  const { param, body, accessToken } = payload;
+  const path = createMeetingPath(param);
 
   try {
     const { data } = await axios.post(path, body, {

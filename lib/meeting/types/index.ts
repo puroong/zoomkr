@@ -1,4 +1,4 @@
-export interface CreateMeetingParameter {
+export interface CreateMeetingParam {
   userId: string;
 }
 
@@ -234,7 +234,7 @@ export interface CreateMeetingRequestBody {
 }
 
 export interface CreateMeetingPayload {
-  parameter: CreateMeetingParameter;
+  param: CreateMeetingParam;
 
   body: CreateMeetingRequestBody;
 
