@@ -1,6 +1,6 @@
-import { createMeeting } from './apis/create.api';
+import { createMeeting } from './apis/create';
 import { deleteMeeting } from './apis/delete';
-import { listMeeting } from './apis/list.api';
+import { listMeeting } from './apis/list';
 
 export const meeting = {
   create: createMeeting,
