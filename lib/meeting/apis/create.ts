@@ -1,4 +1,4 @@
-import axios from '../../core/axios';
+import axios from '../../common/axios';
 
 function createMeetingPath(payload: CreateMeetingParam) {
   return `/users/${payload.userId}/meetings`;

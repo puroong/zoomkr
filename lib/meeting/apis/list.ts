@@ -1,5 +1,5 @@
-import axios from '../../core/axios';
-import { stringify } from '../../core/helpers/querstring.helper';
+import axios from '../../common/axios';
+import { stringify } from '../../common/helpers/querstring.helper';
 
 function listMeetingPath(payload: ListMeetingParam) {
   return `/users/${payload.userId}/meetings`;

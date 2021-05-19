@@ -1,6 +1,9 @@
-import axios from '../../core/axios';
-import { EMPTY_BODY, ZOOM_AUTH_HOST } from '../../core/constants/core.constant';
-import { stringify } from '../../core/helpers/querstring.helper';
+import axios from '../../common/axios';
+import {
+  EMPTY_BODY,
+  ZOOM_AUTH_HOST,
+} from '../../common/constants/core.constant';
+import { stringify } from '../../common/helpers/querstring.helper';
 import { REQUEST_ACCESS_TOKEN_PATH } from '../constants/oauth2.constant';
 import {
   Oauth2Credential,
