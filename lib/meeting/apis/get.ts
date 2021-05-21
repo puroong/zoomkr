@@ -1,3 +1,4 @@
+import { ApiPayload } from '../../common/api-payload.interface';
 import axios from '../../common/axios';
 import { stringify } from '../../common/helpers/querstring.helper';
 
@@ -32,10 +33,5 @@ export interface GetMeetingQuery {
   show_previous_occurences: boolean;
 }
 
-export interface GetMeetingPayload {
-  param: GetMeetingParam;
-
-  query: GetMeetingQuery;
-
-  accessToken: string;
-}
+export interface GetMeetingPayload
+  extends ApiPayload<GetMeetingParam, GetMeetingQuery, undefined> {}

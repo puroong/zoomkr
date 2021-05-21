@@ -1,3 +1,4 @@
+import { ApiPayload } from '../../common/api-payload.interface';
 import axios from '../../common/axios';
 import { stringify } from '../../common/helpers/querstring.helper';
 
@@ -42,10 +43,5 @@ export interface ListMeetingQuery {
   page_number?: string;
 }
 
-export interface ListMeetingPayload {
-  param: ListMeetingParam;
-
-  query: ListMeetingQuery;
-
-  accessToken: string;
-}
+export interface ListMeetingPayload
+  extends ApiPayload<ListMeetingParam, ListMeetingQuery, undefined> {}
