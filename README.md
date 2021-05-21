@@ -11,6 +11,7 @@ Alternative for zoomus
 * Features
 * Installing
 * Example
+* Instance methods
 
 ## Features
 
@@ -38,5 +39,27 @@ async test() {
     const meeting = await Zoom.meeting.get({ param: { meetingId: 789789 }, query: {}, acccessToken });
 
     console.log(meeting);
+}
+```
+
+## Instance methods
+
+All methods should be given only one argument with type of ApiPayload.
+
+ApiPayload has param, query, body and acceessToken.
+
+```
+function method(payload: ApiPayload) {
+    ....
+}
+
+export interface ApiPayload<P, Q, B> {
+    param: P;
+
+    query: Q;
+
+    body: B;
+
+    accessToken: string;
 }
 ```

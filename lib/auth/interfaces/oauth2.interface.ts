@@ -3,7 +3,7 @@ export interface Oauth2Credential {
   clientSecret: string;
 }
 
-export interface RequestAccessTokenParameter {
+export interface RequestAccessTokenParam {
   grantType: string;
   code: string;
   redirectUri: string;

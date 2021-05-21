@@ -1,3 +1,4 @@
+import { ApiPayload } from '../../common/api-payload.interface';
 import axios from '../../common/axios';
 import { stringify } from '../../common/helpers/querstring.helper';
 
@@ -25,13 +26,8 @@ interface DeleteMeetingParam {
   meetingId: number;
 }
 
-interface DeleteMeetingPayload {
-  param: DeleteMeetingParam;
-
-  query: DeleteMeetingQuery;
-
-  accessToken: string;
-}
+interface DeleteMeetingPayload
+  extends ApiPayload<DeleteMeetingParam, DeleteMeetingQuery, undefined> {}
 
 interface DeleteMeetingQuery {
   occurrence_id?: string;

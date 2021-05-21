@@ -1,3 +1,4 @@
+import { ApiPayload } from '../../common/api-payload.interface';
 import axios from '../../common/axios';
 
 function createMeetingPath(payload: CreateMeetingParam) {
@@ -256,10 +257,5 @@ export interface CreateMeetingRequestBody {
   template_id?: string;
 }
 
-export interface CreateMeetingPayload {
-  param: CreateMeetingParam;
-
-  body: CreateMeetingRequestBody;
-
-  accessToken: string;
-}
+export interface CreateMeetingPayload
+  extends ApiPayload<CreateMeetingParam, undefined, CreateMeetingRequestBody> {}

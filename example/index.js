@@ -11,13 +11,13 @@ app.get('/', async (req, res) => {
             clientSecret: process.env.clientSecret,
         }
 
-        const parameter = {
+        const param = {
             grantType: 'authorization_code',
             code: req.query.code,
             redirectUri: process.env.redirectURL
         }
 
-        const accessToken = await zoom.auth.getAccessToken(credential, parameter);
+        const accessToken = await zoom.auth.getAccessToken(credential, param);
         const newMeeting = await zoom.meeting.create({ param: { userId: 'me' }, body: {}, accessToken });
         const meetings = await zoom.meeting.list({ param: { userId: 'me' }, query: {}, accessToken });
         
