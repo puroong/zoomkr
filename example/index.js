@@ -1,8 +1,12 @@
 require('dotenv/config')
 
 const express = require('express')
-const zoom = require('zoomkr');
+const { Zoom: zoom } = require('zoomkr');
 const app = express()
+
+if(!process.env.clientID) throw new Error('process.env.clientID not set');
+if(!process.env.clientSecret) throw new Error('process.env.clientSecret not set');
+if(!process.env.redirectURL) throw new Error('process.env.redirectURL not set');
 
 app.get('/', async (req, res) => {
     if(req.query.code) {
