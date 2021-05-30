@@ -36,7 +36,7 @@ You can install this package with `npm`
 async test() {
     const Zoom = require('zoomkr');
     const accessToken = 'your access token'
-    const meeting = await Zoom.meeting.get({ param: { meetingId: 789789 }, query: {}, acccessToken });
+    const meeting = await Zoom.meeting.get({ param: { meetingId: 789789 }, query: {}, body: undefined, acccessToken });
 
     console.log(meeting);
 }
