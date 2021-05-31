@@ -252,7 +252,7 @@ export interface CreateMeetingRequestBody {
 
   recurrence?: Recurrence;
 
-  settings: Setting;
+  settings?: Setting;
 
   template_id?: string;
 }
